@@ -69,7 +69,8 @@ public class TwitterSigninModule extends ReactContextBaseJavaModule implements A
                 map.putString("name", session.getUserName());
                 map.putString("userID", Long.toString(session.getUserId()));
                 map.putString("userName", session.getUserName());
-                twitterAuthClient.requestEmail(session, new com.twitter.sdk.android.core.Callback<String>() {
+                promise.resolve(map);
+                /*twitterAuthClient.requestEmail(session, new com.twitter.sdk.android.core.Callback<String>() {
                     @Override
                     public void success(Result<String> result) {
                         map.putString("email", result.data);
@@ -84,7 +85,7 @@ public class TwitterSigninModule extends ReactContextBaseJavaModule implements A
                                 map.toString(),
                                 new Exception("Failed to obtain email", exception));
                     }
-                });
+                });*/
             }
 
             @Override
